@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { getBookmarkById, updateBookmarkById } from "../Api/API";
 
-let url = process.env.REACT_APP_API_URL;
+// let url = process.env.REACT_APP_API_URL;
 
 function EditBookmark() {
   const navigate = useNavigate();

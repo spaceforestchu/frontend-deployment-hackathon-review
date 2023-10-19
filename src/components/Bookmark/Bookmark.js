@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import Reviews from "../Reviews/Reviews";
 import { getBookmarkById, deleteBookmarkById } from "../Api/API";
 
 function Bookmark() {
-  let url = process.env.REACT_APP_API_URL;
+  // let url = process.env.REACT_APP_API_URL;
   const [bookmark, setBookmark] = useState(null);
 
   const navigate = useNavigate();
