@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Bookmarks from "./components/Bookmarks/Bookmarks";
+import Bookmark from "./components/Bookmark/Bookmark";
+import Nav from "./components/Nav/Nav";
+import NewBookmark from "./components/NewBookmark/NewBookmark";
+import EditBookmark from "./components/EditBookmark/EditBookmark";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="/bookmarks/:id" element={<Bookmark />} />
+          <Route path="/bookmarks/:id/edit" element={<EditBookmark />} />
+          <Route path="/create-bookmark" element={<NewBookmark />} />
+          <Route path="/404" element={<h1>404 Not found!</h1>} />
+          <Route path="*" element={<h1>404 Not found!</h1>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
